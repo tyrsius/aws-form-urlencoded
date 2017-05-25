@@ -1,3 +1,7 @@
+aws-form-urlencoded
+===============
+This is a fork of the original [form-urlencoded](https://github.com/iambumblehead/form-urlencoded) library to handle AWS's dot-separation idiosyncrasies. It has the same API as the original library (docs below)
+
 form-urlencoded
 ===============
 **(c)[Bumblehead][0],[JBlashill][6] 2012-2017**
