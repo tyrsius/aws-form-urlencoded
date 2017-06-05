@@ -1,7 +1,7 @@
 {
   "name": "aws-form-urlencoded",
   "main": "aws-form-urlencoded",
-  "version": "0.9.1",
+  "version": "0.9.2",
   "description": "Return an object as an 'x-www-form-urlencoded' string",
   "author": "Tim Kye <tyrsius@gmail.com>",
   "license": "MIT",
