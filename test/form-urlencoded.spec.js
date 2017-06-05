@@ -25,7 +25,7 @@ describe("formurlencoded.encode", function() {
         propStr2: 'str2',
         propArr1: ['arrStr1', 'arrStr2']
       })
-    ).toBe('propStr1=str1&propStr2=str2&propArr1.1=arrStr1&propArr1.2=arrStr2');
+    ).toBe('propStr1=str1&propStr2=str2&propArr1.member.1=arrStr1&propArr1.member.2=arrStr2');
   });
 
   it("should return encoded data, with object properties", function() {
@@ -57,19 +57,19 @@ describe("formurlencoded.encode", function() {
           propArr1Obj2Str1: 'obj2Str1'
         }]
       }
-    })).toBe('propStr1=str1&propStr2=str2&propObj1.objPropStr1=objStr1&propObj1.objPropStr2=objStr2&propObj1.objPropObj1.propObj1Str1=obj1Str1&propObj1.objPropArr1.1.propArr1Obj1Str1=obj1Str1&propObj1.objPropArr1.2.propArr1Obj2Str1=obj2Str1');
+    })).toBe('propStr1=str1&propStr2=str2&propObj1.objPropStr1=objStr1&propObj1.objPropStr2=objStr2&propObj1.objPropObj1.propObj1Str1=obj1Str1&propObj1.objPropArr1.member.1.propArr1Obj1Str1=obj1Str1&propObj1.objPropArr1.member.2.propArr1Obj2Str1=obj2Str1');
   });
 
   it("should return encoded data, with numbers", function() {
     expect(
       formurlencoded({ propArr1: [1, 2, 3] })
-    ).toBe('propArr1.1=1&propArr1.2=2&propArr1.3=3');
+    ).toBe('propArr1.member.1=1&propArr1.member.2=2&propArr1.member.3=3');
   });
 
   it("should return encoded data, with booleans", function() {
     expect(
       formurlencoded({ propArr1: [true, false, true] })
-    ).toBe('propArr1.1=true&propArr1.2=false&propArr1.3=true');
+    ).toBe('propArr1.member.1=true&propArr1.member.2=false&propArr1.member.3=true');
   });
 
   it("should return encoded data, with null", function() {
@@ -115,7 +115,7 @@ describe("formurlencoded.encode", function() {
   it("should return encoded data, without null", function() {
     expect(
       formurlencoded({ propArr1: [null, null, 1] }, { ignorenull: true })
-    ).toBe('propArr1.3=1');
+    ).toBe('propArr1.member.3=1');
   });
 
   it("should return the correct test result", function() {
