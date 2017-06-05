@@ -47,7 +47,7 @@ module.exports = function(data, opts) {
   function arrnest(name, arr) {
     return arr.length ?
       filterjoin(arr.map(function(elem, index) {
-        return nest(name + '.' + (index + 1), elem);
+        return nest(name + '.member.' + (index + 1), elem);
       })) :
       '';
   }
